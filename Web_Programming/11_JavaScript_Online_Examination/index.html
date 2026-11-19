@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Online Examination</title>
+<style>body{font-family:Arial;max-width:750px;margin:30px auto;padding:0 15px}.question{padding:12px;border:1px solid #ddd;margin:12px 0}</style></head>
+<body>
+<h1>Online Examination</h1>
+<p>Answer all questions and click Submit to see your score.</p>
+<form id="exam">
+<div class="question"><p>1. What does HTML stand for?</p>
+<label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label><br>
+<label><input type="radio" name="q1" value="b"> High Text Machine Language</label></div>
+<div class="question"><p>2. Which tag creates a hyperlink?</p>
+<label><input type="radio" name="q2" value="a"> &lt;img&gt;</label><br>
+<label><input type="radio" name="q2" value="b"> &lt;a&gt;</label></div>
+<div class="question"><p>3. Which language adds interactivity to a web page?</p>
+<label><input type="radio" name="q3" value="a"> JavaScript</label><br>
+<label><input type="radio" name="q3" value="b"> SQL</label></div>
+<div class="question"><p>4. Which CSS property changes text colour?</p>
+<label><input type="radio" name="q4" value="a"> background</label><br>
+<label><input type="radio" name="q4" value="b"> color</label></div>
+<button type="submit">Submit Exam</button> <button type="reset" onclick="document.getElementById('result').textContent=''">Reset</button>
+</form><h2 id="result" aria-live="polite"></h2>
+<script>
+document.getElementById("exam").addEventListener("submit",function(e){
+ e.preventDefault();const answers={q1:"a",q2:"b",q3:"a",q4:"b"};let score=0;
+ Object.keys(answers).forEach(q=>{if(new FormData(this).get(q)===answers[q])score++;});
+ document.getElementById("result").textContent=`Your score: ${score} / ${Object.keys(answers).length}`;
+});
+</script></body></html>

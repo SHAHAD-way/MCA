@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Validated Registration</title></head>
+<body>
+<h1>Registration Form with JavaScript Validation</h1>
+<form id="regForm" novalidate>
+  <p><label>Name: <input id="name" type="text"></label></p>
+  <p><label>Email: <input id="email" type="text"></label></p>
+  <p><label>Phone (10 digits): <input id="phone" type="text" maxlength="10"></label></p>
+  <p><label>Password: <input id="password" type="password"></label></p>
+  <p><label>Confirm password: <input id="confirm" type="password"></label></p>
+  <button type="submit">Submit</button>
+</form>
+<p id="message" role="status"></p>
+<script>
+document.getElementById("regForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const password=document.getElementById("password").value;
+ const confirm=document.getElementById("confirm").value;
+ let errors=[];
+ if(name.length<3) errors.push("Name must contain at least 3 characters.");
+ if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) errors.push("Enter a valid email address.");
+ if(!/^\\d{10}$/.test(phone)) errors.push("Phone number must contain exactly 10 digits.");
+ if(password.length<6) errors.push("Password must contain at least 6 characters.");
+ if(password!==confirm) errors.push("Passwords do not match.");
+ const msg=document.getElementById("message");
+ msg.style.color=errors.length?"red":"green";
+ msg.textContent=errors.length?errors.join(" "):"Registration form validated successfully!";
+});
+</script></body></html>

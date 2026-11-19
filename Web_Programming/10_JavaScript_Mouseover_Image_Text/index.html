@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Mouseover Event</title></head>
+<body>
+<h1>JavaScript Mouseover Event Handling</h1>
+<p>Move the mouse over the image to change the image and text.</p>
+<img id="sampleImage" src="https://placehold.co/320x180?text=Move+Mouse+Here"
+     alt="Default sample" width="320" height="180"
+     onmouseover="changeContent()" onmouseout="restoreContent()">
+<h2 id="heading">Welcome</h2>
+<p id="description">This is the original text.</p>
+<script>
+function changeContent(){
+ document.getElementById("sampleImage").src="https://placehold.co/320x180/2463a6/ffffff?text=Mouse+Over";
+ document.getElementById("sampleImage").alt="Mouseover image";
+ document.getElementById("heading").textContent="You moved the mouse over the image!";
+ document.getElementById("description").textContent="The image and text were changed using the mouseover event.";
+}
+function restoreContent(){
+ document.getElementById("sampleImage").src="https://placehold.co/320x180?text=Move+Mouse+Here";
+ document.getElementById("sampleImage").alt="Default sample";
+ document.getElementById("heading").textContent="Welcome";
+ document.getElementById("description").textContent="This is the original text.";
+}
+</script></body></html>

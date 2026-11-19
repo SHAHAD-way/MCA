@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>String and Math Functions</title></head>
+<body>
+<h1>JavaScript String and Math Object Functions</h1>
+<label>Enter text: <input id="txt" value="Web Programming"></label>
+<button onclick="showString()">String Functions</button>
+<br><br>
+<label>Enter a number: <input id="num" type="number" value="16.7"></label>
+<button onclick="showMath()">Math Functions</button>
+<pre id="output"></pre>
+<script>
+function showString() {
+  const value = document.getElementById("txt").value;
+  const result = [
+    "Original: " + value,
+    "Length: " + value.length,
+    "Uppercase: " + value.toUpperCase(),
+    "Lowercase: " + value.toLowerCase(),
+    "Trim: " + value.trim(),
+    "Slice(0, 4): " + value.slice(0, 4),
+    "Replace: " + value.replace("Web", "Internet"),
+    "Includes 'Pro': " + value.includes("Pro"),
+    "Index of 'a': " + value.indexOf("a")
+  ];
+  document.getElementById("output").textContent = result.join("\\n");
+}
+function showMath() {
+  const n = Number(document.getElementById("num").value);
+  if (!Number.isFinite(n)) { alert("Enter a valid number"); return; }
+  const result = [
+    "Number: " + n, "Math.round: " + Math.round(n),
+    "Math.ceil: " + Math.ceil(n), "Math.floor: " + Math.floor(n),
+    "Absolute value: " + Math.abs(n), "Square root: " + Math.sqrt(Math.abs(n)),
+    "Power (n²): " + Math.pow(n, 2), "Random (0 to 1): " + Math.random()
+  ];
+  document.getElementById("output").textContent = result.join("\\n");
+}
+</script>
+</body></html>

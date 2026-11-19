@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Background Colour Changer</title>
+<style>body{font-family:Arial;text-align:center;padding:50px;transition:background .3s}</style></head>
+<body>
+<h1>Change Background Colour</h1>
+<p>Click the button to change the page background colour.</p>
+<button id="changeBtn">Change Background</button>
+<script>
+const colours=["#fce4ec","#e3f2fd","#e8f5e9","#fff3e0","#ede7f6","#f1f8e9"];
+let index=0;
+document.getElementById("changeBtn").addEventListener("click",()=>{
+ document.body.style.backgroundColor=colours[index];
+ index=(index+1)%colours.length;
+});
+</script></body></html>

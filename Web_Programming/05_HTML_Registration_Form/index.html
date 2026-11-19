@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Registration Form</title></head>
+<body>
+<h1>Student Registration</h1>
+<form action="#" method="post">
+  <label>Full name: <input type="text" name="fullname" required></label><br><br>
+  <label>Email: <input type="email" name="email" required></label><br><br>
+  <label>Password: <input type="password" name="password" minlength="6" required></label><br><br>
+  <label>Date of birth: <input type="date" name="dob"></label><br><br>
+  <label>Gender:
+    <select name="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select>
+  </label><br><br>
+  <label>Course:
+    <input type="radio" name="course" value="MCA" required> MCA
+    <input type="radio" name="course" value="MBA"> MBA
+    <input type="radio" name="course" value="BCA"> BCA
+  </label><br><br>
+  <label>Address:<br><textarea name="address" rows="4" cols="35"></textarea></label><br><br>
+  <label><input type="checkbox" required> I agree to the terms and conditions</label><br><br>
+  <button type="submit">Register</button> <button type="reset">Clear</button>
+</form>
+</body></html>

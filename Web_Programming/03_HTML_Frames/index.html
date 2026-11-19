@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>HTML Frames Demonstration</title></head>
+<body>
+  <h1>HTML Frames Demonstration</h1>
+  <p><strong>Note:</strong> The old <code>frameset</code> element is obsolete in HTML5.
+     This modern demonstration uses iframe elements.</p>
+  <h2>Floating frame</h2>
+  <iframe title="Floating frame" srcdoc="&lt;h2&gt;Floating frame&lt;/h2&gt;&lt;p&gt;This content is embedded in an iframe.&lt;/p&gt;"
+          width="420" height="130"></iframe>
+  <h2>Navigation frame</h2>
+  <p>Choose a page in the navigation links. The selected page opens in the frame below.</p>
+  <nav>
+    <a href="page1.html" target="contentFrame">Page 1</a> |
+    <a href="page2.html" target="contentFrame">Page 2</a>
+  </nav>
+  <iframe name="contentFrame" title="Navigation content frame" src="page1.html"
+          width="420" height="130"></iframe>
+  <h2>Mixed frame layout</h2>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <iframe title="Mixed frame left" src="page1.html" width="200" height="120"></iframe>
+    <iframe title="Mixed frame right" src="page2.html" width="200" height="120"></iframe>
+  </div>
+</body></html>
